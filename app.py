@@ -2,12 +2,10 @@ from flask import Flask, render_template, request, jsonify, send_file
 import math
 import random
 import base64
-import io # Importante para manejar archivos en memoria
+import io
 
 app = Flask(__name__)
 
-# --- FUNCIONES RSA (TU CÓDIGO PYTHON) ---
-# Mantén estas funciones como están, son las mismas que en la versión anterior
 def gen_primos():
     x = random.randint(10, 50)
     for i in range(2, int(math.sqrt(x)) + 1):
@@ -65,7 +63,7 @@ def ejecutar_programa():
 def mi_equipo():
     return render_template('mi_equipo.html')
 
-# --- NUEVAS RUTAS PARA LA LÓGICA RSA CON SUBIDA DE ARCHIVOS ---
+
 
 @app.route('/api/encrypt_file', methods=['POST'])
 def encrypt_file():
