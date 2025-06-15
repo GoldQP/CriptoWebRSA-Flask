@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+*egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+.vscode/
+*.db
+instance/
+*.log
+# Procfile (Descomentar si no quieres que se suba, pero usualmente sí se sube)

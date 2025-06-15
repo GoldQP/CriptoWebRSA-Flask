@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}Fundamento Teórico - Criptografía RSA{% endblock %}
+
+{% block content %}
+    <section id="fundamento">
+        <h2>Fundamento Teórico de la Criptografía</h2>
+        <h3>¿Qué es la Criptografía?</h3>
+        <p>La criptografía es el arte y la ciencia de proteger la información transformándola en un formato ilegible, conocido como texto cifrado, para que solo las personas autorizadas puedan acceder al contenido original.</p>
+        <p>Sus principales objetivos son:</p>
+        <ul>
+            <li><strong>Confidencialidad:</strong> Evitar que la información sea leída por personas no autorizadas.</li>
+            <li><strong>Integridad:</strong> Garantizar que la información no ha sido alterada.</li>
+            <li><strong>Autenticación:</strong> Verificar la identidad de las partes involucradas.</li>
+            <li><strong>No repudio:</strong> Evitar que el emisor o receptor niegue haber enviado o recibido un mensaje.</li>
+        </ul>
+
+        <h3>Tipos de Criptografía</h3>
+        <h4>Criptografía Simétrica (Clave Secreta)</h4>
+        <p>Utiliza una única clave compartida tanto para el cifrado como para el descifrado. Es muy eficiente para grandes volúmenes de datos. Ejemplos: AES, DES.</p>
+        <h4>Criptografía Asimétrica (Clave Pública - RSA)</h4>
+        <p>Emplea un par de claves matemáticamente relacionadas: una clave pública para cifrar y una clave privada para descifrar. La clave pública se puede compartir libremente, mientras que la clave privada debe mantenerse en secreto. RSA es un algoritmo ampliamente utilizado en esta categoría.</p>
+        <p>La seguridad de RSA se basa en la dificultad computacional de factorizar números enteros muy grandes en sus factores primos.</p>
+
+        <h3>Ejemplo Básico de RSA (Conceptual)</h3>
+        <p>Para cifrar un mensaje $M$ y obtener un cifrado $C$, se utiliza la clave pública $(n, e)$ mediante la fórmula: $C = M^e \pmod n$.</p>
+        <p>Para descifrar un cifrado $C$ y obtener el mensaje original $M$, se utiliza la clave privada $(n, d)$ mediante la fórmula: $M = C^d \pmod n$.</p>
+        <p>Donde $n = p \times q$ (p y q son números primos grandes) y $e, d$ son los exponentes de cifrado y descifrado, relacionados por $e \times d \equiv 1 \pmod{\Phi(n)}$, siendo $\Phi(n) = (p-1)(q-1)$ la función totiente de Euler.</p>
+        </section>
+{% endblock %}

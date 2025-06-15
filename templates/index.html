@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}Inicio - Proyecto Criptografía RSA{% endblock %}
+
+{% block content %}
+    <section id="inicio">
+        <h2>Bienvenido a Nuestro Proyecto de Criptografía RSA</h2>
+        <p>Este proyecto explora la implementación de algoritmos de cifrado RSA para proteger la información, demostrando su funcionamiento a través de una aplicación interactiva.</p>
+        <p>Aprende sobre los fundamentos de la criptografía, experimenta con el cifrado y descifrado de mensajes, y conoce a los integrantes de nuestro equipo.</p>
+        <p>La criptografía es la ciencia de transformar datos legibles (texto plano) en un formato ilegible 
+(texto cifrado) mediante algoritmos y claves, de modo que sólo las partes autorizadas puedan revertir 
+el proceso y recuperar la información original. Su finalidad principal abarca la confidencialidad, la 
+integridad y la autenticación de la información, garantizando que no pueda ser leída o modificada por 
+usuarios no autorizados. 
+Aunque en sus orígenes la criptografía estuvo confinada a ámbitos militares y diplomáticos, 
+en la actualidad “ha penetrado en todo: desde navegadores web y programas de correo electrónico 
+hasta teléfonos móviles, tarjetas bancarias, automóviles e incluso dispositivos médicos 
+implantables”. Esta ubicuidad obliga a que la criptografía sea un componente crítico de seguridad en 
+sistemas tan diversos como redes inalámbricas, transacciones financieras y el Internet de las cosas 
+(IoT). 
+La complejidad de los sistemas de cifrado es un factor clave para su robustez; como advierte 
+Bruce Schneier, “Complexity is the enemy of security”. Asimismo, resulta fundamental apoyarse en 
+algoritmos estandarizados y probados, porque “Anyone who tries to create his or her own 
+cryptographic primitive is either a genius or a fool”. 
+En palabras de Stallings, “In an age of viruses and hackers, electronic eavesdropping, and 
+electronic fraud on a global scale, security is paramount. The purpose of this book is to provide a 
+practical survey of both the principles and practice of cryptography and network security”. Este 
+proyecto aplicará dichos principios desarrollando un programa en Python que encripte el contenido 
+de un archivo de texto, genere una clave privada y permita su envío seguro a un compañero para su 
+posterior desencriptación. 
+Además, recupera el hito de Diffie y Hellman (1976) al introducir la criptografía de clave 
+pública, que posibilitó el intercambio de claves seguras sin canal previo protegido. Con ello, se 
+pretende experimentar tanto con cifrado simétrico como asimétrico, y profundizar en el manejo de 
+claves criptográficas y algoritmos de encriptación en entornos computacionales.</p>    
+    </section>
+{% endblock %}

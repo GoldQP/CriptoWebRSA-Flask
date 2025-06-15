@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block title %}Ejecutar Programa - Criptografía RSA{% endblock %}
+
+{% block content %}
+    <section id="ejecutar">
+        <h2>Demostración Interactiva del Cifrado RSA</h2>
+        <p>Sube un archivo de texto (.txt) para cifrarlo con nuestro algoritmo RSA. Luego, podrás descargar el archivo cifrado. Los números primos generados son pequeños para propósitos de demostración.</p>
+
+        <div class="crypto-section">
+            <h3>Cifrado (Emisor)</h3>
+            <label for="fileInputEncrypt">Selecciona un archivo .txt para cifrar:</label>
+            <input type="file" id="fileInputEncrypt" accept=".txt"><br>
+            <button id="encryptButton">Cifrar Archivo</button>
+
+            <h4>Detalles de las Claves Generadas:</h4>
+            <p><strong>p:</strong> <span id="p_val"></span></p>
+            <p><strong>q:</strong> <span id="q_val"></span></p>
+            <p><strong>n:</strong> <span id="n_val"></span></p>
+            <p><strong>Ecuación de Euler (Phi):</strong> <span id="euler_val"></span></p>
+            <p><strong>Clave Pública (n, e):</strong> [<span id="public_n_val"></span>, <span id="public_e_val"></span>]</p>
+            <p><strong>Clave Privada (n, d):</strong> [<span id="private_n_val"></span>, <span id="private_d_val"></span>]</p>
+
+            <h4>Archivo Cifrado (Base64 y Clave Privada):</h4>
+            <textarea id="encryptedOutputDisplay" rows="5" cols="60" readonly placeholder="Contenido del archivo cifrado y clave privada (para copiar)"></textarea><br>
+            <a id="downloadEncryptedFile" href="#" download="mensaje_encriptado.txt" style="display:none;">Descargar Archivo Cifrado</a>
+
+            <h4>Proceso Carácter a Carácter (Original -> ASCII -> Cifrado):</h4>
+            <table id="encryptTable">
+                <thead>
+                    <tr>
+                        <th>Carácter</th>
+                        <th>ASCII</th>
+                        <th>Cifrado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </div>
+
+        <div class="crypto-section">
+            <h3>Descifrado (Receptor)</h3>
+            <label for="fileInputDecrypt">Sube el archivo cifrado (.txt) que contiene el mensaje Base64 y la clave privada:</label>
+            <input type="file" id="fileInputDecrypt" accept=".txt"><br>
+            <button id="decryptButton">Descifrar Archivo</button>
+
+            <h4>Mensaje Descifrado:</h4>
+            <textarea id="decryptedOutput" rows="5" cols="60" readonly placeholder="Contenido del archivo descifrado"></textarea><br>
+            <a id="downloadDecryptedFile" href="#" download="mensaje_desencriptado.txt" style="display:none;">Descargar Archivo Descifrado</a>
+
+            <h4>Proceso Carácter a Carácter (Cifrado -> ASCII -> Descifrado):</h4>
+            <table id="decryptTable">
+                <thead>
+                    <tr>
+                        <th>Valor Cifrado</th>
+                        <th>ASCII Descifrado</th>
+                        <th>Carácter Descifrado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </div>
+
+        <h3>Código Fuente Python (Lógica del Servidor)</h3>
+        <p>A continuación, puedes revisar el código Python que gestiona el cifrado y descifrado en el servidor. Este código se ejecuta en el backend y es invocado por la interfaz web.</p>
+        <pre><code class="language-python" id="serverPythonCode">
+# Pega el contenido de tu 'app.py' aquí.
+# Asegúrate de mantenerlo actualizado si modificas app.py.
+
+# from flask import Flask, render_template, request, jsonify
+# import math
+# import random
+# import base64
+# import io # Añadido para el manejo de archivos en memoria
+
+# app = Flask(__name__)
+
+# # --- FUNCIONES RSA (TU CÓDIGO PYTHON) ---
+# # ... (pega todas tus funciones RSA aquí: gen_primos, condicion, generar_claves_rsa_para_web) ...
+
+# # --- RUTAS DE NAVEGACIÓN ---
+# # ... (rutas index, fundamento_teorico, ejecutar_programa, mi_equipo) ...
+
+# # --- RUTAS PARA LA LÓGICA RSA INTERACTIVA (Cifrado) ---
+# @app.route('/api/encrypt', methods=['POST'])
+# def encrypt_file():
+#     # ... (Aquí irá la nueva lógica para manejar archivos) ...
+#     pass
+
+# # --- RUTAS PARA LA LÓGICA RSA INTERACTIVA (Descifrado) ---
+# @app.route('/api/decrypt', methods=['POST'])
+# def decrypt_file():
+#     # ... (Aquí irá la nueva lógica para manejar archivos) ...
+#     pass
+
+# if __name__ == '__main__':
+#     app.run(debug=True)
+        </code></pre>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}
